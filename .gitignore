@@ -1,3 +1,7 @@
 node_modules
 dist
 dev
+dist copy
+dev copy
+node_modules copy
+
