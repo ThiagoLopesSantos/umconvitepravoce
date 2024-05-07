@@ -82,6 +82,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'src/images/', // diretório de origem
+                    src: ['**/*.{png,jpg,gif}'], // tipos de arquivos a serem otimizados
+                    dest: 'dist/images/' // diretório de destino
+                }]
+            }
+        },
         clean: ['prebuild'],
         uglify: {
             target: {
@@ -100,8 +110,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     //executando as tarefas
     grunt.registerTask('default',['watch']);
-    grunt.registerTask('build',['less:production', 'htmlmin:dist', 'replace:dist', 'clean', 'uglify']);
+    grunt.registerTask('build',['less:production', 'htmlmin:dist', 'replace:dist', 'imagemin', 'clean', 'uglify']);
 }
