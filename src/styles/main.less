@@ -1,0 +1,357 @@
+@import "reset.less";
+@import "variaveis.less";
+
+body {    
+    background-color: @corDeFundo;
+}
+
+.title_styles() {
+    border-bottom: 3px solid @corSecundariaTexto;
+    color: @corSecundariaTexto;
+    margin: 0 auto;
+    max-width: 90%;
+    font-size: 3em;
+
+    @media @breakpointMobile {
+        font-size: 1.7em; 
+        text-align: center;      
+    }
+}
+.button_styles(){
+    background-color: @corPrimaria;
+    box-shadow: 5px 5px 2px #000;
+    margin: 0 auto;
+
+    &:hover {
+        background-color: @corSecundariaTexto;
+        box-shadow: 1px 1px 2px #000;
+        color: #FFF;
+    }
+}
+.inputs_styles(){
+    display: flex;
+    align-items: flex-end;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 20px;
+
+    label {
+        font-size: 1.3em;
+        color: @corPrimaria;            
+        border-bottom: 2px solid @corSecundariaTexto;
+
+        
+    }
+    input {
+        background-color: transparent;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: none;
+        border-bottom: 2px solid @corSecundariaTexto;
+    } 
+}
+
+#home {
+    background-image: url('https://img.freepik.com/fotos-gratis/casal-de-foto-completa-sendo-romantico_23-2150948056.jpg?t=st=1715043280~exp=1715046880~hmac=fdc71256b9d86b230c83f7bea9699c648fabf3bdf91363511a177652aeff83b6&w=2000');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+    @media @breakpointMobile {
+        background-image: url('https://img.freepik.com/fotos-gratis/pares-bonitos-que-passam-tempo-juntos_23-2150794492.jpg?t=st=1715043528~exp=1715047128~hmac=413046e1348bf003cf10b3b7be54f27f0acce625602ffd56d0df0d0bf774b1a4&w=900');
+        background-position: center;
+    }
+
+    @media @breakpointTablet {
+        background-position: center;
+    }
+
+    .container {
+        justify-content: flex-start;
+    }
+
+    h1 {
+        display: block;
+        color: @corSecundariaTexto;
+        font-family: @titleFont;
+        font-weight: bold;
+        border-bottom: 3px solid @corSecundariaTexto;
+        font-size: 3em;
+        
+        @media @breakpointMobile {
+            font-size: 2em;      
+        }
+    }
+
+    .invited-text{
+        background-color: rgba(0,0,0,.7);
+        padding: 10px;
+        border-radius: 10px;        
+        
+        h2 {
+            color: @corSecundariaTexto;
+            font-size: 1.7em;
+            
+            @media @breakpointTablet {
+                font-size: 1.5em; 
+                text-align: center;      
+            }
+
+            @media @breakpointMobile {
+                font-size: 1em; 
+                text-align: center;      
+            }
+        }
+        
+        h3 {
+            color: @corSecundariaTexto;
+            font-size: 1.5em;
+            
+            @media @breakpointMobile {
+                font-size: 1em; 
+                text-align: center;      
+            }
+        }
+    }
+    .menu-area {
+        .navbar-toggler {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            z-index: 1;
+            box-shadow: 3px 3px 10px @corPrincipalTexto;
+            background-color: @corSecundariaButton;
+            &:hover {
+                background-color: @corSecundariaTexto;
+            }
+        }
+        .menu-navigation {
+            background-color: rgba(0,0,0,.7);
+            border-radius: 10px;
+            position: fixed;
+            max-width: 770px;
+            //ajustando a responsividade do menu
+            width: calc(100% - 18%); 
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            
+            .nav {
+                width: 100%;
+                li {
+                    border-right: 2px solid @corSecundariaTexto;
+                    
+                    @media @breakpointTablet {
+                        border-right: none;
+                        border-bottom: 1px solid @corSecundariaTexto;
+                        width: 100%;
+                    }
+
+                    @media @breakpointMobile {
+                        border-right: none;
+                        border-bottom: 1px solid @corSecundariaTexto;
+                        width: 100%;
+                    }
+                    &:last-child {
+                        border: none;
+                    }
+                    
+                    .nav-link {
+                        background-color: transparent;
+                        text-decoration: none;
+                        font-family: @titleFont;
+                        font-weight: bold;
+                        color: @corSecundariaTexto;
+                        font-size: 1em;
+                        text-transform: uppercase;
+                        transition: all ease 1s;
+
+                        @media @breakpointTablet {
+                            font-size: 1em; 
+                            text-align: center;      
+                        }
+
+                        @media @breakpointMobile {
+                            font-size: .9em; 
+                            text-align: center;      
+                        }
+                        &:hover {
+                            color: @corDeFundo;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#confirmacao {
+    background-image: url('https://img.freepik.com/fotos-gratis/concha-em-um-fundo-de-areia-marrom-com-espaco-de-copia_1409-4803.jpg?t=st=1715043757~exp=1715047357~hmac=320a91b9f3b221e950343d3e43575afb98f1cc0c651c658e8a1f176f7a6202ed&w=2000');
+}
+#confirmation-form {
+    background-color: #f8e4cbc2;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0px 0px 30px #000;
+
+
+    h2 {
+        .title_styles();
+    }
+
+    #email-option {
+        display: none;
+    }
+    
+    .input-box{
+        .inputs_styles();        
+    }
+
+    #check-area {
+        justify-content: space-evenly;
+        @media @breakpointMobile {
+            flex-direction: column;
+        }
+    }
+
+    #extra {
+        #item-1,
+        #item-2,
+        #item-3,
+        #item-4,
+        #item-5,
+        #item-6
+        {
+            display: none;
+        }
+        #item-2{
+            justify-content: center;
+        }
+        
+    }
+
+    .btn {
+        .button_styles();
+    }
+
+    .messageError {
+        color: red !important;
+        font-weight: bold !important;
+        font-size: .9em !important;
+        display: none;
+    }
+    .e-check {
+        background-color: #00000070;
+        color: #ffeb94;
+    }
+    #successMessage {
+        background-color: @corPrincipalTexto;
+        box-shadow: 0px 0px 10px #3e5c03;
+        border: 2px solid yellowgreen;
+        color: @corSecundariaTexto;
+        max-width: 300px;
+        margin: 0 auto;
+        width: 100%;
+        border-radius: 10px;
+        transition: all ease-in 1s;
+        display: none;
+    }
+    #errorMessage {
+        background-color: @corPrincipalTexto;
+        box-shadow: 0px 0px 10px #420300;
+        border: 2px solid red;
+        color: @corSecundariaTexto;
+        max-width: 300px;
+        margin: 0 auto;
+        width: 100%;
+        border-radius: 10px;
+        transition: all ease-in 1s;
+        display: none;
+    }
+}
+
+
+#lua-de-mel {
+    background-color: #000;
+    img {
+        width: 250px;
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+    .container {
+        justify-content: start;
+        height: 100vh;
+    }
+    h2 {
+        .title_styles();
+    }
+    h3 {
+        color: @corSecundariaTexto;
+            font-size: 1.5em;
+            
+            @media @breakpointMobile {
+                font-size: 1em; 
+                text-align: center;      
+            }
+    }
+    .inputs {
+        .inputs_styles();
+        justify-content: center;
+        input{
+            width: 200px;
+            color: @corPrimaria;     
+        }
+    }
+    #lm-confirmation {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .btn {
+            .button_styles();
+            max-width: 199px;
+            width: 100%;
+            height: 190px;
+            border: 1px solid @corPrincipalTexto;
+            border-radius: 50%;
+            background-image: url('../../images/oplm1.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            &:hover {
+                background-color: #FFF;
+                box-shadow:0px 0px 100px #FFF;
+            }
+        }
+
+        #lm-message {
+            color: #ffeb94;
+            font-size: 2em;
+
+            @media @breakpointMobile {
+            font-size: 1.3em;
+            }
+        }
+    }
+}
+
+#sobre-o-local {
+    height: 100vh;
+    h2 {
+        .title_styles()
+    }
+    .carousel-item {
+        img {
+            max-width: 200px;
+            margin: 0 auto;
+        }
+    }
+}
+
+/*
+width: calc(100% - 18%);: Esta linha define a largura do elemento para ser 100% menos 18% (que é a soma de 9% de left e 9% de right que você usava antes). Isto é útil para manter um espaçamento uniforme nas laterais.
+left: 50%;: Posiciona o ponto de partida do elemento na metade horizontal da tela.
+transform: translateX(-50%);: Este truque é muito utilizado para centralizar elementos absolutamente ou fixamente posicionados. O translateX(-50%) move o elemento para trás em 50% de sua própria largura, centralizando-o perfeitamente em relação à posição definida pelo left: 50%;
+*/
